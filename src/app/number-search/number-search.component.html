@@ -1,0 +1,176 @@
+<!-- number-search-page click -->
+<section *ngIf="homeInfo.isLocalSearch || homeInfo.NumberType =='' || homeInfo.NumberType =='8**'">
+    <div>
+        <h1  class="main_inner_h">Get a Toll Free <span class="small_or">(or)</span> Local Business Number</h1>
+    </div>
+    <div class="main_num_serch_click">
+        <div class="col-lg-6 number_search_mrg">
+          <div class="toll_glob"><img src="assets/toll_glob_img.jpg"/></div>
+          <span class="small_lab_black">Search for your Toll Free Number here</span>
+          <div class="btn-group surch_mrg">
+            <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown droup_itc">
+              <button class="btn btn-outline-primary select_droup_btb" ngbDropdownToggle>8**</button>
+              <div class="dropdown-menu select_list" ngbDropdownMenu>
+                <button ngbDropdownItem>800 Numbers</button>
+                <button ngbDropdownItem>Standard Toll Free Numbers</button>
+                <button ngbDropdownItem>833</button>
+                <button ngbDropdownItem>844</button>
+                <button ngbDropdownItem>855</button>
+                <button ngbDropdownItem>866</button>
+                <button ngbDropdownItem>877</button>
+                <button ngbDropdownItem>888</button>
+              </div>
+            </div>
+            <div class="input_fs"><input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter a number, word or phrase"></div>
+            <div class="searc_bt"><button class="btn btn-success my-2 my-sm-0 search_main_btn input-search_icon" type="submit">Search</button></div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="toll_glob"><img src="assets/local_glob_img.jpg"/></div>
+            <span class="small_lab_black">Search for your Local Phone Number here</span>
+            <div class="surch_mrg"><div class="input_fs "><input type="text" class="form-control code_text" id="exampleInputEmail1"  placeholder="Enter area code    _  _  _"></div>
+            <div class="searc_bt"><button class="btn btn-success my-2 my-sm-0 search_main_btn input-search_icon" type="submit">Search</button></div> </div>
+      </div>
+      <div class="member_in clear clearfix">Already have a iTeleCenter Connect account? <span>Sign in.</span></div>
+      <div class="port_box clearfix">
+          <div class="col-lg-1"> <img class="port_phone" src="assets/port_img_icon.png" /> </div>
+          <div class="col-lg-1"><img class="port_green_arrow" src="assets/port_green_arrow.png" /> </div>
+          <div class="col-lg-10">
+             <div class="port_green_text"># Number Porting</div>
+             <div class="port_text">Already have a number you love? No problem! Access iTeleCenter
+                Connect’s great features from your current number.</div>
+          </div>
+      </div>
+    </div>
+    <section class="footer_main">
+        <div class="featured_main featured_main2">
+            <h2 class="second_h">We've served over 100,000 businesses.<br>
+                Here's what a few of them have to say.</h2>
+            <div class="main_cnt_phone">
+                <div class="col-lg-9 col-md-9 no-pt">
+                    <div class="clearfix">
+                        <div class="col-lg-2  col-md-3 no-pt">
+                            <img src="assets/jakel_c.jpg">
+                        </div>
+                        <div class="col-lg-7 col-md-7">
+                            <div class="footer_main_cnt only_first">"It's a great service, and I don't have to be stuck in the office to receive business calls."</div>
+                            <div class="footer_main_b">
+                                Vern Pelzer,<br>
+                                Jakel Media
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="col-lg-2 col-md-3 no-pt">
+                            <img src="assets/gain_c.jpg">
+                        </div>
+                        <div class="col-lg-7 col-md-7">
+                            <div class="footer_main_cnt">"iTeleCenter is like an easy button for your business phone solutions."</div>
+                            <div class="footer_main_b">
+                                Gina DeLong,<br>
+                                Piranha Marketing, Inc.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 no-pt">
+                        <img src="assets/dswa_c.jpg">
+                    </div>
+                    <div class="col-lg-7 col-md-7">
+                        <div class="footer_main_cnt only_first">"iTeleCenter is an outstanding value..."</div>
+                        <div class="footer_main_b">
+                            GracAnne Keohouhou,<br>
+                            Direct Selling Women's Alliance
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 rwd_app_h">
+                    <div class="footer_main_cnt only_first">Get the Free iPhone or Android App that makes our service even easier to use on the go!</div>
+                    <div class="only_first">
+                        <a target="_blank" href="https://itunes.apple.com/us/app/itelecenter/id426417970?mt=8">
+                            <img src="assets/appstore.gif"></a>
+                    </div>
+                    <div class="only_first">
+                        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.coanetwork.iTeleCenter">
+                            <img src="assets/g_play.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </section>
+<!-- number-search-page click -->
+
+<section *ngIf="!homeInfo.isLocalSearch && homeInfo.NumberType!='8**' &&  homeInfo.NumberType !=''">
+    <div>
+         <h1 id="h1Title" class="main_inner_h">Select Your
+              <span *ngIf="homeInfo.NumberType=='800' ||  homeInfo.NumberType=='Standard'">{{homeInfo.NumberType}}</span> 
+              <span *ngIf="homeInfo.NumberType !='800' &&  homeInfo.NumberType !='Standard'">Custom Vanity</span>  
+              Number</h1> 
+    </div>
+     <h2 class="main_inner_h2">Your new number will be ready to use after one quick step on the next page.</h2> 
+    <!-- in vss code -->
+    <div class="main_num_serch">
+        <div class="col-lg-12" *ngIf="homeInfo.NumberType !='800' &&  homeInfo.NumberType !='Standard'">
+          <div class="btn-group mr-3">
+                <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown droup_itc">
+                        <button class="btn btn-outline-primary select_droup_btb" ngbDropdownToggle id="ddlshowclick"   value="8**">{{homeInfo.NumberType}}</button>
+                    <div class="dropdown-menu select_list" ngbDropdownMenu>
+                      <button ngbDropdownItem value="800 Numbers" (click)="ddlSelected('800')">800 Numbers</button>
+                      <button ngbDropdownItem values="Standard Toll Free Numbers" (click)="ddlSelected('Standard')" >Standard Toll Free Numbers</button>
+                      <button ngbDropdownItem value="833" (click)="ddlSelected('833')">833</button>
+                      <button ngbDropdownItem value="844" (click)="ddlSelected('844')">844</button>
+                      <button ngbDropdownItem value="855" (click)="ddlSelected('855')">855</button>
+                      <button ngbDropdownItem value="866" (click)="ddlSelected('866')">866</button>
+                      <button ngbDropdownItem value="877" (click)="ddlSelected('877')">877</button>
+                      <button ngbDropdownItem value="888" (click)="ddlSelected('888')">888</button>
+                    </div>
+                  </div>
+            <div class="input_fs"><input type="text" class="form-control" [(ngModel)]="homeInfo.VanNumber" placeholder="Enter a number, word or phrase"></div>
+            <div class="searc_bt"><button class="btn btn-success my-2 my-sm-0 search_main_btn input-search_icon" type="submit">Search</button></div>
+          </div>
+        </div>
+        <div class="congrats_text">Congratulations!</div>
+    </div>
+    <div class="number_display_main number_display_main_white"> 
+        <div class="prime_numbers">
+            <div class="number_display_inner col-lg-12">
+                <ul class="list-group list-group col-lg-12 col-md-offset-1"> 
+                    <li class="list-group-item list-group-item col-lg-3 number_select"> <span class="badge">&nbsp;</span> <span class="number_view">(800) 454-5930</span> <span class="number_view_d">(800) 454-5930</span> </li>
+                    <li class="list-group-item list-group-item col-lg-3"> <span class="badge">&nbsp;</span> <span class="number_view">(800) 454-5930</span> <span class="number_view_d">(800) 454-5930</span> </li>
+                    <li class="list-group-item list-group-item col-lg-3"> <span class="badge">&nbsp;</span> <span class="number_view">(800) 454-5930</span> <span class="number_view_d">(800) 454-5930</span> </li> 
+                </ul>
+             </div>
+        </div>
+        <div class="add_to_buy">
+            <input type="submit" name="btnHomeSearch" value="Yes, I want this number" id="btnHomeSearch" class="btn_middel">
+        </div>
+    </div>
+     <div class="number_display_main"> 
+      <h4 class="text-center diplay_normal clearfix">Or, select from these closest available matches:</h4>
+        <div class="number_display_inner col-lg-12">
+            <ul class="list-group list-group col-lg-12 col-md-offset-1"> 
+                <li class="list-group-item list-group-item col-lg-3"> <span class="badge">&nbsp;</span> <span class="number_view">(800) 454-5930</span> <span class="number_view_d">(800) 454-5930</span> </li>
+                <li class="list-group-item list-group-item col-lg-3"> <span class="badge">&nbsp;</span> <span class="number_view">(800) 454-5930</span> <span class="number_view_d">(800) 454-5930</span> </li>
+                <li class="list-group-item list-group-item col-lg-3"> <span class="badge">&nbsp;</span> <span class="number_view">(800) 454-5930</span> <span class="number_view_d">(800) 454-5930</span> </li> 
+                <li class="list-group-item list-group-item col-lg-3"> <span class="badge">&nbsp;</span> <span class="number_view">(800) 454-5930</span> <span class="number_view_d">(800) 454-5930</span> </li>
+                <li class="list-group-item list-group-item col-lg-3"> <span class="badge">&nbsp;</span> <span class="number_view">(800) 454-5930</span> <span class="number_view_d">(800) 454-5930</span> </li>
+                <li class="list-group-item list-group-item col-lg-3"> <span class="badge">&nbsp;</span> <span class="number_view">(800) 454-5930</span> <span class="number_view_d">(800) 454-5930</span> </li> 
+                <li class="list-group-item list-group-item col-lg-3"> <span class="badge">&nbsp;</span> <span class="number_view">(800) 454-5930</span> <span class="number_view_d">(800) 454-5930</span> </li>
+                <li class="list-group-item list-group-item col-lg-3"> <span class="badge">&nbsp;</span> <span class="number_view">(800) 454-5930</span> <span class="number_view_d">(800) 454-5930</span> </li>
+                <li class="list-group-item list-group-item col-lg-3"> <span class="badge">&nbsp;</span> <span class="number_view">(800) 454-5930</span> <span class="number_view_d">(800) 454-5930</span> </li> 
+            </ul>
+         </div>
+         <div class="next_set"><span class="">Show More Numbers</span></div>
+     </div>
+ <!-- in vss code -->
+</section>
+<section class="inner_footer">
+    <a href="http://www.coanetwork.com" target="_blank">
+ © 2019  COA Network.
+    </a>
+    &nbsp; All Rights Reserved.
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="PrivacyPolicy.aspx">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+    <a href="TermsOfSiteUse.aspx">Terms of Site Use</a>
+</section>

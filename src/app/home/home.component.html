@@ -1,0 +1,272 @@
+<section class="header_main">
+        <div class="overlayeffectbanner"></div>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" routerLink="home">
+                    <img src="assets/itc_log.png" alt="">
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="active_nav" (click)="HomeClick()" routerLink="/home">Home</a></li>
+                    <li><a routerLink="/How-It-Works-And-Features">How It Works  & Features</a></li>
+                    <li><a routerLink="/Pricing-And-Plans">Pricing & Plans</a></li>
+                    <li><a routerLink="/Number-Search">Start Free Trial</a></li>
+                    <li><a class="btn_login" target="_blank" href="https://www.coasecure.com/login.aspx">Login</a> </li>
+                    <li><span class="number_ph">(800) 454-5930</span></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h1 class="main_txt">Get a Toll Free <span class="small_or">(or)</span> Local Business Number</h1>
+    <div class="small_main">Look and sound more professional! </div>
+    <div class="main_num_serch">
+        <div class="col-lg-6">
+                <span class="small_lab">Search for your Toll Free Number here</span>
+          <div class="btn-group mr-3">
+            
+            <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown droup_itc">
+                  <button class="btn btn-outline-primary select_droup_btb" ngbDropdownToggle id="ddlshowclick"   value="8**">{{homeInfo.NumberType}}</button>
+              <div class="dropdown-menu select_list" ngbDropdownMenu>
+                <button ngbDropdownItem value="800 Numbers" (click)="ddlSelected('800')">800 Numbers</button>
+                <button ngbDropdownItem values="Standard Toll Free Numbers" (click)="ddlSelected('Standard')" >Standard Toll Free Numbers</button>
+                <button ngbDropdownItem value="833" (click)="ddlSelected('833')">833</button>
+                <button ngbDropdownItem value="844" (click)="ddlSelected('844')">844</button>
+                <button ngbDropdownItem value="855" (click)="ddlSelected('855')">855</button>
+                <button ngbDropdownItem value="866" (click)="ddlSelected('866')">866</button>
+                <button ngbDropdownItem value="877" (click)="ddlSelected('877')">877</button>
+                <button ngbDropdownItem value="888" (click)="ddlSelected('888')">888</button>
+              </div>
+            </div>
+            <div class="input_fs">
+                <input type="text" #search class="form-control" [(ngModel)]="homeInfo.VanNumber"  placeholder="Enter a number, word or phrase">
+            </div>
+            <div class="searc_bt"><button class="btn btn-success my-2 my-sm-0 search_main_btn input-search_icon" (click)="btnSearchClick('Vanity')" type="submit">Search</button></div>
+          </div>
+        </div>
+        <div class="col-lg-1"><div class="divider_line"><img src="assets/line_div.png" /></div></div>
+        <div class="col-lg-5">
+            <span class="small_lab">Search for your Local Phone Number here</span>
+            <div class="input_fs">
+                <input type="text" class="form-control code_text" [(ngModel)]="homeInfo.AreaCode"  placeholder="Enter area code    _  _  _">
+            </div>
+            <div class="searc_bt">
+                <button class="btn btn-success my-2 my-sm-0 search_main_btn input-search_icon" (click)="btnSearchClick('Local')"  type="submit">Search</button>
+            </div> 
+      </div>
+    </div>
+    <div class="very_small"><span>Try it free for two weeks. </span>Then starting at <span id="spn_Amount">19.95/month</span> thereafter.</div>
+    <div class="very_small port_main">Port your <span>#</span> Number to <span>iTeleCenter</span></div>
+    <div class="arrow_center">
+        <img src="assets/down_arrow.png">
+    </div>
+</section>
+<section class="featured">
+    <h2 class="second_h">Over 100,000 small businesses served</h2>
+    <div class="featured_main featured_main2">
+        <div>
+            <div class="col-lg-3 col-md-3 col-sm-12 cont_fu">
+                Featured In:
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-6 main_txt_ctr">
+                <img src="assets/cnn_fu.jpg" class="img-responsive2">
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-6 main_txt_ctr">
+                <img src="assets/smart_fu.jpg" class="img-responsive2">
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-6 main_txt_ctr">
+                <img style="padding-top: 10px;" src="assets/forbes_fu.jpg" class="img-responsive2">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 main_txt_ctr">
+                <img style="width: 132px" src="assets/microsoft_fu.jpg" class="img-responsive2">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="gray_bg" style="margin-bottom: 0;">
+    <h2  class="separate_h">iTeleCenter has all the communication features</h2>
+    <div class="phone_num_main">
+    <div class="main_cnt_phone update_sec">
+        <div class="col-lg-6 col-md-6 how_top_pt_main">
+            <div class="phone_cnt">
+               iTeleCenter provides you a business toll free or local number that you can manage from an app on your smartphone or any browser. Get your new number activated and ready to accept calls and texts in under&nbsp;<span class="block"> 5 minutes! </span> 
+            </div>
+            <div class="how_btn">
+              <a id="aFreeTrial" class="btn_big" href="javascript:__doPostBack('aFreeTrial','')">Start For Free Today</a>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 firest_im">
+            <img class="img-responsive" src="assets/all_inbox.png">
+        </div>
+    </div>
+</div>
+</section>
+<section class="sh_gray">
+    <div class="work_flow">
+        <div class="col-lg-5 col-md-5">
+            <div class="col-lg-2 col-md-2">
+                <img src="assets/touch_icon_img.jpg">
+            </div>
+            <div class="col-lg-10 col-md-10 work_mrg work_pt work_cnt">Easy-to-Use</div>
+            <div class="col-lg-2 col-md-2 text-center clearfix">
+                <img src="assets/save_doc_iconpng.jpg">
+            </div>
+            <div class="col-lg-10 col-md-10 work_pt work_cnt">No Long-Term Contracts</div>
+        </div>
+        <div class="col-lg-5 col-md-6 col-md-offset-1 col-lg-offset-2">
+            <div class="col-lg-2 col-md-2">
+                <img src="assets/cpu_hd_icon.jpg">
+            </div>
+            <div class="col-lg-10 col-md-10 work_mrg work_pt work_cnt">No Software or Hardware to Buy</div>
+            <div class="col-lg-2 col-md-2 text-center clearfix">
+                <img src="assets/time_main.jpg">
+            </div>
+            <div class="col-lg-10 col-md-10 work_pt work_cnt">Set Up in Minutes</div>
+        </div>
+    </div>
+</section>
+<section class="professional">
+    <div class="featured_main featured_main2">
+        <h2 class="second_h">Look &amp; sound more professional</h2>
+        <div class="main_cnt_phone">
+            <div class="col-lg-6 col-md-6 phone_pt">
+                <div class="phone_cnt_b">Greet every caller professionally.</div>
+                <div class="phone_cnt">
+                    Instantly see when a call is coming from your business number so you can answer in a professional, business-like manner.
+                </div>
+                <div class="phone_cnt_b">Enhance your company image. </div>
+                <div class="phone_cnt">
+                    Easily turn your small operation into a multi-department powerhouse by using different extensions for each department  even if you’re the only one answering calls! Record a professional greeting and easily add department &amp; employee extensions in seconds.
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6  firest_img1">
+                <img src="assets/ext_incmng_call.png">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="gray_bg" style="clear: both">
+    <div class="featured_main featured_main2">
+        <h2 class="separate_h">Separate your business and personal calls</h2>
+        <div class="main_cnt_phone">
+            <div class="phone_cnt col-lg-11">
+                There’s a reason people have separate work emails. And yet, many people use their personal phone numbers for business. Why not separate both for the same reasons? 
+            </div>
+            <div class="col-lg-5 col-md-5 second_img2">
+                <img class="separate_img" src="assets/itc_mobile_app_img.jpg">
+            </div>
+            <div class="col-lg-6 col-md-6 phone_pt3">
+                <div class="phone_cnt_b">Know who’s calling.</div>
+                <div class="phone_cnt">
+                    Instantly know when a call is personal or for your business.
+                </div>
+                <div class="phone_cnt_b">Display your business number.</div>
+                <div class="phone_cnt">
+                    Make calls and send text messages through the app and your business phone number shows on their caller ID. This keeps your personal number private.
+                </div>
+
+                <div class="phone_cnt_b">Manage business hours</div>
+                <div class="phone_cnt">
+                    Choose when you want to accept business calls. After hours, calls forward to your professional business voicemail.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="professional">
+    <div class="featured_main featured_main2">
+        <h2 class="second_h">Freedom to work from anywhere</h2>
+        <div class="main_cnt_phone">
+            <div class="col-lg-7 col-md-7 phone_pt2">
+                <div class="phone_cnt_b">Make &amp; receive calls using your existing cell phone.</div>
+                <div class="phone_cnt">
+                    One phone, 2 numbers. Your business number uses your current cellular signal to make and receive calls so you can work from anywhere your phone works.
+                </div>
+                <div class="phone_cnt_b">Send/Receive texts and faxes.</div>
+                <div class="phone_cnt">
+                    Text and fax online right through any computer or use our iOS or Android app.
+                </div>
+                <div class="phone_cnt_b">Read your voicemail.</div>
+                <div class="phone_cnt">
+                    Can’t take a call?  No need to sit through a long, rambling voicemail. With Voicemail Transcription add-on, we transcribe your voicemail messages, so you can scan through them on your phone.
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-lg-offset-1 three_img3">
+                <img src="assets/itc_mobile_app_img2.jpg">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="footer_main">
+    <div class="featured_main featured_main2">
+        <h2 class="second_h">We've served over 100,000 businesses.<br>
+            Here's what a few of them have to say.</h2>
+        <div class="main_cnt_phone">
+            <div class="col-lg-9 col-md-9 no-pt">
+                <div class="clearfix">
+                    <div class="col-lg-2  col-md-3 no-pt">
+                        <img src="assets/jakel_c.jpg">
+                    </div>
+                    <div class="col-lg-7 col-md-7">
+                        <div class="footer_main_cnt only_first">"It's a great service, and I don't have to be stuck in the office to receive business calls."</div>
+                        <div class="footer_main_b">
+                            Vern Pelzer,<br>
+                            Jakel Media
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <div class="col-lg-2 col-md-3 no-pt">
+                        <img src="assets/gain_c.jpg">
+                    </div>
+                    <div class="col-lg-7 col-md-7">
+                        <div class="footer_main_cnt">"iTeleCenter is like an easy button for your business phone solutions."</div>
+                        <div class="footer_main_b">
+                            Gina DeLong,<br>
+                            Piranha Marketing, Inc.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 no-pt">
+                    <img src="assets/dswa_c.jpg">
+                </div>
+                <div class="col-lg-7 col-md-7">
+                    <div class="footer_main_cnt only_first">"iTeleCenter is an outstanding value..."</div>
+                    <div class="footer_main_b">
+                        GracAnne Keohouhou,<br>
+                        Direct Selling Women's Alliance
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 rwd_app_h">
+                <div class="footer_main_cnt only_first">Get the Free iPhone or Android App that makes our service even easier to use on the go!</div>
+                <div class="only_first">
+                    <a target="_blank" href="https://itunes.apple.com/us/app/itelecenter/id426417970?mt=8">
+                        <img src="assets/appstore.gif"></a>
+                </div>
+                <div class="only_first">
+                    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.coanetwork.iTeleCenter">
+                        <img src="assets/g_play.png"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="inner_footer">
+        <a href="http://www.coanetwork.com" target="_blank">
+     © 2019  COA Network.
+        </a>
+        &nbsp; All Rights Reserved.
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="PrivacyPolicy.aspx">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    
+        <a href="TermsOfSiteUse.aspx">Terms of Site Use</a>
+    </section>
