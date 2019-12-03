@@ -1,5 +1,5 @@
 <!-- number-search-page click -->
-<section *ngIf="homeInfo.isLocalSearch || homeInfo.NumberType =='' || homeInfo.NumberType =='8**'">
+<section *ngIf="homeInfo.isLocalSearch ||!homeInfo.NumberType|| homeInfo.NumberType =='' || (homeInfo.NumberType =='8**' && !homeInfo.isVanitySearch)">
     <div>
         <h1  class="main_inner_h">Get a Toll Free <span class="small_or">(or)</span> Local Business Number</h1>
     </div>
@@ -9,18 +9,18 @@
           <span class="small_lab_black">Search for your Toll Free Number here</span>
           <div class="btn-group surch_mrg">
             <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown droup_itc">
-              <button class="btn btn-outline-primary select_droup_btb" ngbDropdownToggle>8**</button>
-              <div class="dropdown-menu select_list" ngbDropdownMenu>
-                <button ngbDropdownItem>800 Numbers</button>
-                <button ngbDropdownItem>Standard Toll Free Numbers</button>
-                <button ngbDropdownItem>833</button>
-                <button ngbDropdownItem>844</button>
-                <button ngbDropdownItem>855</button>
-                <button ngbDropdownItem>866</button>
-                <button ngbDropdownItem>877</button>
-                <button ngbDropdownItem>888</button>
-              </div>
+                <button class="btn btn-outline-primary select_droup_btb" ngbDropdownToggle id="ddlshowclick"   value="8**">{{homeInfo.NumberType}}</button>
+            <div class="dropdown-menu select_list" ngbDropdownMenu>
+              <button ngbDropdownItem value="800 Numbers" (click)="ddlSelected('800')">800 Numbers</button>
+              <button ngbDropdownItem values="Standard Toll Free Numbers" (click)="ddlSelected('Standard')" >Standard Toll Free Numbers</button>
+              <button ngbDropdownItem value="833" (click)="ddlSelected('833')">833</button>
+              <button ngbDropdownItem value="844" (click)="ddlSelected('844')">844</button>
+              <button ngbDropdownItem value="855" (click)="ddlSelected('855')">855</button>
+              <button ngbDropdownItem value="866" (click)="ddlSelected('866')">866</button>
+              <button ngbDropdownItem value="877" (click)="ddlSelected('877')">877</button>
+              <button ngbDropdownItem value="888" (click)="ddlSelected('888')">888</button>
             </div>
+          </div>
             <div class="input_fs"><input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter a number, word or phrase"></div>
             <div class="searc_bt"><button class="btn btn-success my-2 my-sm-0 search_main_btn input-search_icon" type="submit">Search</button></div>
           </div>
@@ -100,7 +100,7 @@
   </section>
 <!-- number-search-page click -->
 
-<section *ngIf="!homeInfo.isLocalSearch && homeInfo.NumberType!='8**' &&  homeInfo.NumberType !=''">
+<section *ngIf="!homeInfo.isLocalSearch && homeInfo.NumberType && (homeInfo.NumberType!='8**' ||homeInfo.isVanitySearch)&&  homeInfo.NumberType !=''">
     <div>
          <h1 id="h1Title" class="main_inner_h">Select Your
               <span *ngIf="homeInfo.NumberType=='800' ||  homeInfo.NumberType=='Standard'">{{homeInfo.NumberType}}</span> 
@@ -112,19 +112,19 @@
     <div class="main_num_serch">
         <div class="col-lg-12" *ngIf="homeInfo.NumberType !='800' &&  homeInfo.NumberType !='Standard'">
           <div class="btn-group mr-3">
-                <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown droup_itc">
-                        <button class="btn btn-outline-primary select_droup_btb" ngbDropdownToggle id="ddlshowclick"   value="8**">{{homeInfo.NumberType}}</button>
-                    <div class="dropdown-menu select_list" ngbDropdownMenu>
-                      <button ngbDropdownItem value="800 Numbers" (click)="ddlSelected('800')">800 Numbers</button>
-                      <button ngbDropdownItem values="Standard Toll Free Numbers" (click)="ddlSelected('Standard')" >Standard Toll Free Numbers</button>
-                      <button ngbDropdownItem value="833" (click)="ddlSelected('833')">833</button>
-                      <button ngbDropdownItem value="844" (click)="ddlSelected('844')">844</button>
-                      <button ngbDropdownItem value="855" (click)="ddlSelected('855')">855</button>
-                      <button ngbDropdownItem value="866" (click)="ddlSelected('866')">866</button>
-                      <button ngbDropdownItem value="877" (click)="ddlSelected('877')">877</button>
-                      <button ngbDropdownItem value="888" (click)="ddlSelected('888')">888</button>
-                    </div>
-                  </div>
+            <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown droup_itc">
+                <button class="btn btn-outline-primary select_droup_btb" ngbDropdownToggle id="ddlshowclick"   value="8**">{{homeInfo.NumberType}}</button>
+            <div class="dropdown-menu select_list" ngbDropdownMenu>
+              <button ngbDropdownItem value="800 Numbers" (click)="ddlSelected('800')">800 Numbers</button>
+              <button ngbDropdownItem values="Standard Toll Free Numbers" (click)="ddlSelected('Standard')" >Standard Toll Free Numbers</button>
+              <button ngbDropdownItem value="833" (click)="ddlSelected('833')">833</button>
+              <button ngbDropdownItem value="844" (click)="ddlSelected('844')">844</button>
+              <button ngbDropdownItem value="855" (click)="ddlSelected('855')">855</button>
+              <button ngbDropdownItem value="866" (click)="ddlSelected('866')">866</button>
+              <button ngbDropdownItem value="877" (click)="ddlSelected('877')">877</button>
+              <button ngbDropdownItem value="888" (click)="ddlSelected('888')">888</button>
+            </div>
+          </div>
             <div class="input_fs"><input type="text" class="form-control" [(ngModel)]="homeInfo.VanNumber" placeholder="Enter a number, word or phrase"></div>
             <div class="searc_bt"><button class="btn btn-success my-2 my-sm-0 search_main_btn input-search_icon" type="submit">Search</button></div>
           </div>

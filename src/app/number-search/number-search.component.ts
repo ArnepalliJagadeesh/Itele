@@ -13,6 +13,15 @@ export class NumberSearchComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.CurrentHomePageData.subscribe(res => this.homeInfo = res);
+    if (!this.homeInfo.NumberType || this.homeInfo.NumberType === ''
+      || this.homeInfo.NumberType === '800' || this.homeInfo.NumberType === 'Standard') {
+      this.homeInfo.NumberType = '8**';
+    }
   }
-
+  ddlSelected(val: string) {
+    if (val === 'Standard' || val === '800') {
+      // this.homeInfo.isVanitySearch = true;
+      this.homeInfo.NumberType = val;
+    }
+  }
 }
