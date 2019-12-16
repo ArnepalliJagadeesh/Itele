@@ -1,3 +1,11 @@
+
+<input type="text" [(ngModel)]="searchText">
+
+<div *ngFor="let num of lstNumbers">
+    <span innerHTML="{{num | highlight : searchText }}"></span>
+</div>
+
+
 <!-- number-search-page click -->
 <section *ngIf="homeInfo.isLocalSearch ||!homeInfo.NumberType|| homeInfo.NumberType =='' || (homeInfo.NumberType =='8**' && !homeInfo.isVanitySearch)">
     <div>

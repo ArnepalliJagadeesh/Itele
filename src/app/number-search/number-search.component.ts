@@ -9,6 +9,8 @@ import { DataService } from '../Services/DataService';
 })
 export class NumberSearchComponent implements OnInit {
   homeInfo: HomeInfo = {} as HomeInfo;
+  searchText = '';
+  lstNumbers = ['8001231414', '41212421414', '414446343', '646355353', '5345353463'];
   constructor(private dataService: DataService) { }
 
   ngOnInit() {

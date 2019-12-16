@@ -9,7 +9,7 @@ import { NumberSearchComponent } from './number-search/number-search.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PricingAndPlansComponent } from './pricing-and-plans/pricing-and-plans.component';
 import {FormsModule} from '@angular/forms';
-
+import { HighlightSearch} from './Pipes/highlight';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +17,8 @@ import {FormsModule} from '@angular/forms';
     HowItWorksAndFeaturesComponent,
     NumberSearchComponent,
     PaymentComponent,
-    PricingAndPlansComponent
+    PricingAndPlansComponent,
+    HighlightSearch
   ],
   imports: [
     BrowserModule,
